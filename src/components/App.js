@@ -7,9 +7,10 @@ function App() {
   const onSubmit = data => {
     console.log(data);
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input ref={register} type='file' name='picture' id='picture' />
+      <input {...register('picture', {required: true})} type='file' name='picture' />
       <button>Submit</button>
     </form>
   );
